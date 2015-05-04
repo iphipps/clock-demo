@@ -1,0 +1,17 @@
+.DS_Store
+*.DS_Store
+.sass-cache
+node_modules
+runtime
+/_dev
+.DS_Store
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
+.log
+*.log
+*ianphipps-resume.docx
