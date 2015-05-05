@@ -1,28 +1,34 @@
 
 <div ng-controller="MainCtrl" class="main-controller">
     <div class="controls">
+        <ul>
+            <li ng-if="twentyFour == true">
+                
+                    <a class="" ng-click="setCommon()"><strong>24hr</strong></a>
+                
+            </li>
+            <li ng-if="twentyFour != true">
+                <a class="" ng-click="setMilitary()">
+                    <span ng-if="am == true">
+                        <strong>AM</strong>/PM
+                    </span>
+                    <span ng-if="am != true">
+                        AM/<strong>PM</strong>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="" ng-click="setBackLight()">
+                   <i class="fa fa-lightbulb-o"></i>
+                </a>
+            </li>
+            <li ng-if="alarmisActive == true">
+                <i class="fa fa-bell-o"></i>
+            </li>
+        </ul>
+       
         
-        <div ng-if="twentyFour == true">
-            <a class="" ng-click="setCommon()">24</a>
-        </div>
-        <div ng-if="twentyFour != true">
-            <a class="" ng-click="setMilitary()">
-                <span ng-if="am == true">
-                    <strong>AM</strong>/PM
-                </span>
-                <span ng-if="am != true">
-                    AM/<strong>PM</strong>
-                </span>
-            </a>
-        </div>
-        <div>
-            <a class="" ng-click="setBackLight()">
-               Set Back Light {{backlight}}
-            </a>
-        </div>
-        <div ng-if="alarmisActive == true">
-            alarm going off
-        </div>
+
     </div>
     
     <div class="number row">
@@ -81,9 +87,16 @@
             <div class="bar bar-bottom"></div>
         </div>
     </div>
-    <div class="timers row">
-        <input type="time" class="set-alarm">
-        <a ng-click="setAlarm()">Set Alarm</a>
+    <div class="timers row form">
+        <div class="form-group">
+            <label for="alarm-time" name="alarm-time">Set Alarm</label>
+            <input type="time" id="alarm-time" class="set-alarm form-control">
+           
+        </div>
+        <div class="form-group">
+             <a ng-click="setAlarm()" class="btn btn-primary">Set Alarm</a>
+        </div>
+        
     </div>
     <div class="timers row">
         <div ng-repeat="alarm in alarms" ng-if="alarms.length > 0">
