@@ -9105,4 +9105,7 @@ body {
   border-bottom-color: #003400;
 }
 
-/*# sourceMappingURL=main.css.map */
+/* line 375, ../../app/styles/main.scss */
+a[ng-click] {
+  cursor: pointer;
+}

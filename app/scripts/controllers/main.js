@@ -17,6 +17,10 @@
 angular.module('clockApp')
   .controller('MainCtrl', function ($scope, $interval) {
   	console.log('mainCtrl run');
+  	//$scope initial settings
+  	$scope.twentyFour = true;
+  	$scope.am = true;
+  	//setting up clock
   	var clock = clock || {
 		init: function(){
 			this.nownow = this.now.getTime();
@@ -48,8 +52,24 @@ angular.module('clockApp')
 				}
 				return digits;
 			};
-			$scope.hourOne = stringify(hours)[0];
-			$scope.hourTwo = stringify(hours)[1];
+
+			if($scope.twentyFour === false){
+				if(hours > 12){
+					$scope.am = false;
+					$scope.hourOne = stringify(hours - 12)[0];
+					$scope.hourTwo = stringify(hours - 12)[1];
+				}else{
+					$scope.am = true;
+					$scope.hourOne = stringify(hours)[0];
+					$scope.hourTwo = stringify(hours)[1];
+				}	
+			}else{
+					$scope.hourOne = stringify(hours)[0];
+					$scope.hourTwo = stringify(hours)[1];
+			}
+			
+
+
 			$scope.minuteOne = stringify(minutes)[0];
 			$scope.minuteTwo = stringify(minutes)[1];
 			$scope.secondOne = stringify(seconds)[0];
@@ -63,6 +83,18 @@ angular.module('clockApp')
 		}
 	};
 	clock.init();
+	
+	$scope.setMilitary = function(){
+		console.log('twentyfour');
+		$scope.twentyFour = true;
+	};
+	$scope.setCommon = function(){
+		//this has some holes.  what if it is 11:59 when you click the button
+		if(clock.now.getHours() > 12){
+			$scope.am = false;
+		}
+		$scope.twentyFour = false;
+	};
 	$interval(function(){
 		clock.adjustTime();
 

@@ -1,60 +1,76 @@
 
- <div ng-controller="MainCtrl">
-
+<div ng-controller="MainCtrl">
+    <div class="controls">
+        
+        <div ng-if="twentyFour == true">
+            <a class="" ng-click="setCommon()">24</a>
+        </div>
+        <div ng-if="twentyFour != true">
+            <a class="" ng-click="setMilitary()">
+                <span ng-if="am == true">
+                    <strong>AM</strong>/PM
+                </span>
+                <span ng-if="am != true">
+                    AM/<strong>PM</strong>
+                </span>
+            </a>
+        </div>
+    </div>
+    
     <div class="number">
-      <div class="square-number square-number-{{ hourOne }}">
-        <div class="bar bar-top"></div>
-        <div class="bar bar-top-left"></div>
-        <div class="bar bar-top-right"></div>
-        <div class="bar bar-middle"></div>
-        <div class="bar bar-bottom-left"></div>
-        <div class="bar bar-bottom-right"></div>
-        <div class="bar bar-bottom"></div>
-      </div>
-      <div class="square-number square-number-{{ hourTwo }}">
-        <div class="bar bar-top"></div>
-        <div class="bar bar-top-left"></div>
-        <div class="bar bar-top-right"></div>
-        <div class="bar bar-middle"></div>
-        <div class="bar bar-bottom-left"></div>
-        <div class="bar bar-bottom-right"></div>
-        <div class="bar bar-bottom"></div>
-      </div>
-      <div class="square-number square-number-{{ minuteOne }}">
-        <div class="bar bar-top"></div>
-        <div class="bar bar-top-left"></div>
-        <div class="bar bar-top-right"></div>
-        <div class="bar bar-middle"></div>
-        <div class="bar bar-bottom-left"></div>
-        <div class="bar bar-bottom-right"></div>
-        <div class="bar bar-bottom"></div>
-      </div>
-      <div class="square-number square-number-{{ minuteTwo }}">
-        <div class="bar bar-top"></div>
-        <div class="bar bar-top-left"></div>
-        <div class="bar bar-top-right"></div>
-        <div class="bar bar-middle"></div>
-        <div class="bar bar-bottom-left"></div>
-        <div class="bar bar-bottom-right"></div>
-        <div class="bar bar-bottom"></div>
-      </div>
-      <div class="square-number square-number-{{ secondOne }}">
-        <div class="bar bar-top"></div>
-        <div class="bar bar-top-left"></div>
-        <div class="bar bar-top-right"></div>
-        <div class="bar bar-middle"></div>
-        <div class="bar bar-bottom-left"></div>
-        <div class="bar bar-bottom-right"></div>
-        <div class="bar bar-bottom"></div>
-      </div>
-      <div class="square-number square-number-{{ secondTwo }}">
-        <div class="bar bar-top"></div>
-        <div class="bar bar-top-left"></div>
-        <div class="bar bar-top-right"></div>
-        <div class="bar bar-middle"></div>
-        <div class="bar bar-bottom-left"></div>
-        <div class="bar bar-bottom-right"></div>
-        <div class="bar bar-bottom"></div>
-      </div>
+        <div class="square-number square-number-{{ hourOne }}">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-top-left"></div>
+            <div class="bar bar-top-right"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom-left"></div>
+            <div class="bar bar-bottom-right"></div>
+            <div class="bar bar-bottom"></div>
+        </div>
+        <div class="square-number square-number-{{ hourTwo }}">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-top-left"></div>
+            <div class="bar bar-top-right"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom-left"></div>
+            <div class="bar bar-bottom-right"></div>
+            <div class="bar bar-bottom"></div>
+        </div>
+        <div class="square-number square-number-{{ minuteOne }}">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-top-left"></div>
+            <div class="bar bar-top-right"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom-left"></div>
+            <div class="bar bar-bottom-right"></div>
+            <div class="bar bar-bottom"></div>
+        </div>
+        <div class="square-number square-number-{{ minuteTwo }}">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-top-left"></div>
+            <div class="bar bar-top-right"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom-left"></div>
+            <div class="bar bar-bottom-right"></div>
+            <div class="bar bar-bottom"></div>
+        </div>
+        <div class="square-number square-number-{{ secondOne }}">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-top-left"></div>
+            <div class="bar bar-top-right"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom-left"></div>
+            <div class="bar bar-bottom-right"></div>
+            <div class="bar bar-bottom"></div>
+        </div>
+        <div class="square-number square-number-{{ secondTwo }}">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-top-left"></div>
+            <div class="bar bar-top-right"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom-left"></div>
+            <div class="bar bar-bottom-right"></div>
+            <div class="bar bar-bottom"></div>
+        </div>
     </div>
 </div>

@@ -371,7 +371,10 @@ $square-height: 120px;
   }
 }
 
-
+//features
+a[ng-click]{
+    cursor: pointer;
+}
 
 
 
