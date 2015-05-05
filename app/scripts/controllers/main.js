@@ -20,7 +20,7 @@ angular.module('clockApp')
   	//$scope initial settings
   	$scope.twentyFour = true;
   	$scope.am = true;
-  	$scope.alarms = ['06:59'];
+  	$scope.alarms = ['19:20'];
   	
   	//setting up clock
   	var clock = clock || {
@@ -69,9 +69,6 @@ angular.module('clockApp')
 					$scope.hourOne = stringify(hours)[0];
 					$scope.hourTwo = stringify(hours)[1];
 			}
-			
-
-
 			$scope.minuteOne = stringify(minutes)[0];
 			$scope.minuteTwo = stringify(minutes)[1];
 			$scope.secondOne = stringify(seconds)[0];
@@ -84,20 +81,44 @@ angular.module('clockApp')
 			this.convertTime();
 		}
 	};
+	//start the clock
 	clock.init();
 
 	//check alarm
 	var alarmCheck = function(){
 		if($scope.alarms.length > 0){
+			var activeAlarms = [];
 			$scope.alarms.map(function(x){
 				var currentAlarm = 0;
 				currentAlarm = 	parseInt(x.split(':')[0], 10) * clock.utilities.hourmilli +
 								parseInt(x.split(':')[1], 10) * clock.utilities.minmilli;
 				if(currentAlarm <= clock.todaysTime && currentAlarm + 10000 > clock.todaysTime){
-					console.log('alarmShouldGoOff');
+					activeAlarms.push('yes');
 				}
 				
 			});
+			if(activeAlarms.length > 0){
+				$scope.alarmisActive = true;
+			}else{
+				$scope.alarmisActive = false;
+			}
+		}
+	};
+	//check backlit
+	var backlightCheck = function(){
+		if($scope.backlight > clock.todaysTime){
+			$('.main-controller').addClass('backlit');
+		}else{
+			$('.main-controller').removeClass('backlit');
+			$scope.backlight = 0;
+		}
+	};
+	//check am/pm
+	var checkAm = function(){
+		if($scope.twentyFour === false){
+			if(clock.now.getHours() > 12){
+				$scope.am = false;
+			}
 		}
 	};
 
@@ -108,22 +129,28 @@ angular.module('clockApp')
 	};
 	$scope.setCommon = function(){
 		//this has some holes.  what if it is 11:59 when you click the button
-		if(clock.now.getHours() > 12){
-			$scope.am = false;
-		}
+		
 		$scope.twentyFour = false;
 	};
 	$scope.setAlarm = function(){
-		console.log($scope.alarms);
+
 		if ( $('input.set-alarm').val().length > 4 ){
 			$scope.alarms.push($('input.set-alarm').val());
 		}
 	};
+	$scope.setBackLight = function(){
+		console.log('backlight');
+		$scope.backlight = clock.todaysTime + 10000;
+
+	
+	};
 
 	//the interval function
 	$interval(function(){
+		checkAm();
 		clock.adjustTime();
 		alarmCheck();
+		backlightCheck();
 
   	}, 1000);
 

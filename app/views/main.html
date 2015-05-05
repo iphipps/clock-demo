@@ -1,5 +1,5 @@
 
-<div ng-controller="MainCtrl">
+<div ng-controller="MainCtrl" class="main-controller">
     <div class="controls">
         
         <div ng-if="twentyFour == true">
@@ -14,6 +14,14 @@
                     AM/<strong>PM</strong>
                 </span>
             </a>
+        </div>
+        <div>
+            <a class="" ng-click="setBackLight()">
+               Set Back Light {{backlight}}
+            </a>
+        </div>
+        <div ng-if="alarmisActive == true">
+            alarm going off
         </div>
     </div>
     
