@@ -17,7 +17,7 @@
         </div>
     </div>
     
-    <div class="number">
+    <div class="number row">
         <div class="square-number square-number-{{ hourOne }}">
             <div class="bar bar-top"></div>
             <div class="bar bar-top-left"></div>
@@ -71,6 +71,15 @@
             <div class="bar bar-bottom-left"></div>
             <div class="bar bar-bottom-right"></div>
             <div class="bar bar-bottom"></div>
+        </div>
+    </div>
+    <div class="timers row">
+        <input type="time" class="set-alarm">
+        <a ng-click="setAlarm()">Set Alarm</a>
+    </div>
+    <div class="timers row">
+        <div ng-repeat="alarm in alarms" ng-if="alarms.length > 0">
+            {{alarm}}
         </div>
     </div>
 </div>

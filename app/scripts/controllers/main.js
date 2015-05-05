@@ -20,6 +20,8 @@ angular.module('clockApp')
   	//$scope initial settings
   	$scope.twentyFour = true;
   	$scope.am = true;
+  	$scope.alarms = ['06:59'];
+  	
   	//setting up clock
   	var clock = clock || {
 		init: function(){
@@ -83,7 +85,23 @@ angular.module('clockApp')
 		}
 	};
 	clock.init();
-	
+
+	//check alarm
+	var alarmCheck = function(){
+		if($scope.alarms.length > 0){
+			$scope.alarms.map(function(x){
+				var currentAlarm = 0;
+				currentAlarm = 	parseInt(x.split(':')[0], 10) * clock.utilities.hourmilli +
+								parseInt(x.split(':')[1], 10) * clock.utilities.minmilli;
+				if(currentAlarm <= clock.todaysTime && currentAlarm + 10000 > clock.todaysTime){
+					console.log('alarmShouldGoOff');
+				}
+				
+			});
+		}
+	};
+
+	//bound functions
 	$scope.setMilitary = function(){
 		console.log('twentyfour');
 		$scope.twentyFour = true;
@@ -95,8 +113,17 @@ angular.module('clockApp')
 		}
 		$scope.twentyFour = false;
 	};
+	$scope.setAlarm = function(){
+		console.log($scope.alarms);
+		if ( $('input.set-alarm').val().length > 4 ){
+			$scope.alarms.push($('input.set-alarm').val());
+		}
+	};
+
+	//the interval function
 	$interval(function(){
 		clock.adjustTime();
+		alarmCheck();
 
   	}, 1000);
 
