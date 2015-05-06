@@ -1,106 +1,124 @@
 
 <div ng-controller="MainCtrl" class="main-controller">
-    <div class="controls">
-        <ul>
-            <li ng-if="twentyFour == true">
-                
-                    <a class="" ng-click="setCommon()"><strong>24hr</strong></a>
-                
-            </li>
-            <li ng-if="twentyFour != true">
-                <a class="" ng-click="setMilitary()">
-                    <span ng-if="am == true">
-                        <strong>AM</strong>/PM
-                    </span>
-                    <span ng-if="am != true">
-                        AM/<strong>PM</strong>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a class="" ng-click="setBackLight()">
-                   <i class="fa fa-lightbulb-o"></i>
-                </a>
-            </li>
-            <li ng-if="alarmisActive == true">
-                <i class="fa fa-bell-o"></i>
-            </li>
-        </ul>
+    <div class="controls row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <ul>
+                <li ng-if="twentyFour == true">
+                    
+                        <a class="" ng-click="setCommon()"><strong>24hr</strong></a>
+                    
+                </li>
+                <li ng-if="twentyFour != true">
+                    <a class="" ng-click="setMilitary()">
+                        <span ng-if="am == true">
+                            <strong>AM</strong>/PM
+                        </span>
+                        <span ng-if="am != true">
+                            AM/<strong>PM</strong>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="" ng-click="setBackLight()">
+                       <i class="fa fa-lightbulb-o"></i>
+                    </a>
+                </li>
+                <li ng-if="alarmisActive == true">
+                    <i class="fa fa-bell-o"></i>
+                </li>
+            </ul>
+        </div>
        
         
 
     </div>
     
     <div class="number row">
-        <div class="square-number square-number-{{ hourOne }}">
-            <div class="bar bar-top"></div>
-            <div class="bar bar-top-left"></div>
-            <div class="bar bar-top-right"></div>
-            <div class="bar bar-middle"></div>
-            <div class="bar bar-bottom-left"></div>
-            <div class="bar bar-bottom-right"></div>
-            <div class="bar bar-bottom"></div>
-        </div>
-        <div class="square-number square-number-{{ hourTwo }}">
-            <div class="bar bar-top"></div>
-            <div class="bar bar-top-left"></div>
-            <div class="bar bar-top-right"></div>
-            <div class="bar bar-middle"></div>
-            <div class="bar bar-bottom-left"></div>
-            <div class="bar bar-bottom-right"></div>
-            <div class="bar bar-bottom"></div>
-        </div>
-        <div class="square-number square-number-{{ minuteOne }}">
-            <div class="bar bar-top"></div>
-            <div class="bar bar-top-left"></div>
-            <div class="bar bar-top-right"></div>
-            <div class="bar bar-middle"></div>
-            <div class="bar bar-bottom-left"></div>
-            <div class="bar bar-bottom-right"></div>
-            <div class="bar bar-bottom"></div>
-        </div>
-        <div class="square-number square-number-{{ minuteTwo }}">
-            <div class="bar bar-top"></div>
-            <div class="bar bar-top-left"></div>
-            <div class="bar bar-top-right"></div>
-            <div class="bar bar-middle"></div>
-            <div class="bar bar-bottom-left"></div>
-            <div class="bar bar-bottom-right"></div>
-            <div class="bar bar-bottom"></div>
-        </div>
-        <div class="square-number square-number-{{ secondOne }}">
-            <div class="bar bar-top"></div>
-            <div class="bar bar-top-left"></div>
-            <div class="bar bar-top-right"></div>
-            <div class="bar bar-middle"></div>
-            <div class="bar bar-bottom-left"></div>
-            <div class="bar bar-bottom-right"></div>
-            <div class="bar bar-bottom"></div>
-        </div>
-        <div class="square-number square-number-{{ secondTwo }}">
-            <div class="bar bar-top"></div>
-            <div class="bar bar-top-left"></div>
-            <div class="bar bar-top-right"></div>
-            <div class="bar bar-middle"></div>
-            <div class="bar bar-bottom-left"></div>
-            <div class="bar bar-bottom-right"></div>
-            <div class="bar bar-bottom"></div>
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="clearfix margin-auto">
+                <div class="square-number square-number-{{ hourOne }}">
+                    <div class="bar bar-top"></div>
+                    <div class="bar bar-top-left"></div>
+                    <div class="bar bar-top-right"></div>
+                    <div class="bar bar-middle"></div>
+                    <div class="bar bar-bottom-left"></div>
+                    <div class="bar bar-bottom-right"></div>
+                    <div class="bar bar-bottom"></div>
+                </div>
+                <div class="square-number square-number-{{ hourTwo }}">
+                    <div class="bar bar-top"></div>
+                    <div class="bar bar-top-left"></div>
+                    <div class="bar bar-top-right"></div>
+                    <div class="bar bar-middle"></div>
+                    <div class="bar bar-bottom-left"></div>
+                    <div class="bar bar-bottom-right"></div>
+                    <div class="bar bar-bottom"></div>
+                </div>
+                <div class="colon-separator">
+                    <div class="dot dot-top"></div>
+                    <div class="dot dot-bottom"></div>
+                </div>
+                <div class="square-number square-number-{{ minuteOne }}">
+                    <div class="bar bar-top"></div>
+                    <div class="bar bar-top-left"></div>
+                    <div class="bar bar-top-right"></div>
+                    <div class="bar bar-middle"></div>
+                    <div class="bar bar-bottom-left"></div>
+                    <div class="bar bar-bottom-right"></div>
+                    <div class="bar bar-bottom"></div>
+                </div>
+                <div class="square-number square-number-{{ minuteTwo }}">
+                    <div class="bar bar-top"></div>
+                    <div class="bar bar-top-left"></div>
+                    <div class="bar bar-top-right"></div>
+                    <div class="bar bar-middle"></div>
+                    <div class="bar bar-bottom-left"></div>
+                    <div class="bar bar-bottom-right"></div>
+                    <div class="bar bar-bottom"></div>
+                </div>
+                <div class="colon-separator">
+                    <div class="dot dot-top"></div>
+                    <div class="dot dot-bottom"></div>
+                </div>
+                <div class="square-number square-number-{{ secondOne }}">
+                    <div class="bar bar-top"></div>
+                    <div class="bar bar-top-left"></div>
+                    <div class="bar bar-top-right"></div>
+                    <div class="bar bar-middle"></div>
+                    <div class="bar bar-bottom-left"></div>
+                    <div class="bar bar-bottom-right"></div>
+                    <div class="bar bar-bottom"></div>
+                </div>
+                <div class="square-number square-number-{{ secondTwo }}">
+                    <div class="bar bar-top"></div>
+                    <div class="bar bar-top-left"></div>
+                    <div class="bar bar-top-right"></div>
+                    <div class="bar bar-middle"></div>
+                    <div class="bar bar-bottom-left"></div>
+                    <div class="bar bar-bottom-right"></div>
+                    <div class="bar bar-bottom"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="timers row form">
-        <div class="form-group">
-            <label for="alarm-time" name="alarm-time">Set Alarm</label>
-            <input type="time" id="alarm-time" class="set-alarm form-control">
-           
-        </div>
-        <div class="form-group">
-             <a ng-click="setAlarm()" class="btn btn-primary">Set Alarm</a>
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="alarm-time" name="alarm-time">Set Alarm</label>
+                <input type="time" id="alarm-time" class="set-alarm form-control">
+               
+            </div>
+            <div class="form-group">
+                 <a ng-click="setAlarm()" class="btn btn-primary">Set Alarm</a>
+            </div>
         </div>
         
     </div>
     <div class="timers row">
-        <div ng-repeat="alarm in alarms" ng-if="alarms.length > 0">
-            {{alarm}}
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div ng-repeat="alarm in alarms" ng-if="alarms.length > 0">
+                {{alarm}}
+            </div>
         </div>
     </div>
 </div>

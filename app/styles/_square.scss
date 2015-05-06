@@ -1,0 +1,239 @@
+
+
+.square-number{
+  background-color: $square-color;
+  width: $square-width;
+  height: $square-height;
+  float: left;
+  position: relative;
+
+}
+.bar{
+  background-color: $bar-color;
+  position: absolute;
+}
+.bar-top{
+  top: $bar-width;
+  left: $bar-width * 2;
+  right: $bar-width * 2;
+  width: $square-width - $bar-width * 4;
+  height: $bar-width;
+  &:before{
+    content: '';
+    @include arrow-left;
+  }
+  &:after{
+    content: '';
+    @include arrow-right;
+  }
+}
+.bar-top-left{
+  left: $bar-width;
+  top: $bar-width * 2;
+  height: $square-height / 2 - $bar-width * 2.5;
+  width: $bar-width;
+  &:before{
+    content: '';
+    @include arrow-up;
+  }
+  &:after{
+    content: '';
+    @include arrow-down;
+  }
+}
+.bar-top-right{
+  right: $bar-width;
+  top: $bar-width * 2;
+  height: $square-height / 2 - $bar-width * 2.5;
+  width: $bar-width;
+  &:before{
+    content: '';
+    @include arrow-up;
+  }
+  &:after{
+    content: '';
+    @include arrow-down;
+  }
+}
+.bar-middle{
+  top: $square-height / 2 - ($bar-width / 2);
+  right: $bar-width * 2;
+  left: $bar-width * 2;
+ 
+  width: $square-width - $bar-width * 4;
+  height: $bar-width;
+  &:before{
+    content: '';
+    @include arrow-left;
+  }
+  &:after{
+    content: '';
+    @include arrow-right;
+  }
+}
+.bar-bottom-left{
+  left: $bar-width;
+  bottom: $bar-width * 2;
+  height: $square-height / 2 - $bar-width * 2.5;
+  width: $bar-width;
+  &:before{
+    content: '';
+    @include arrow-up;
+  }
+  &:after{
+    content: '';
+    @include arrow-down;
+  }
+}
+.bar-bottom-right{
+  bottom: $bar-width * 2;
+  right: $bar-width;
+  height: $square-height / 2 - $bar-width * 2.5;
+  width: $bar-width;
+  &:before{
+    content: '';
+    @include arrow-up;
+  }
+  &:after{
+    content: '';
+    @include arrow-down;
+  }
+}
+.bar-bottom{
+  width: $square-width - $bar-width * 4;
+  height: $bar-width;
+  bottom: $bar-width;
+  right: $bar-width * 2;
+  left: $bar-width * 2;
+  &:before{
+    content: '';
+    @include arrow-left;
+  }
+  &:after{
+    content: '';
+    @include arrow-right;
+  }
+
+}
+//this is an unconventional place for an import
+//it is so the number stuff below overrides the backlit colors
+@import 'backlit';
+
+.square-number{
+  &.square-number-0{
+    .bar-middle{ 
+       @include horizontal-unhighlighted;
+       
+    }
+  }
+  &.square-number-1{
+    .bar-top{ 
+       @include horizontal-unhighlighted;
+    }
+    .bar-top-left{ 
+       @include vertical-unhighlighted;
+    }
+    .bar-middle{ 
+       @include horizontal-unhighlighted;
+    }
+    .bar-bottom{ 
+       @include horizontal-unhighlighted;
+    }
+    .bar-bottom-left{ 
+       @include vertical-unhighlighted;
+    }
+  }
+  &.square-number-2{
+    .bar-top-left{ 
+       @include vertical-unhighlighted;
+    }
+    .bar-bottom-right{ 
+       @include vertical-unhighlighted;
+    }
+  }
+  &.square-number-3{
+    .bar-top-left{ 
+       @include vertical-unhighlighted;
+    }
+    .bar-bottom-left{ 
+       @include vertical-unhighlighted;
+    }
+
+  }
+  &.square-number-4{
+    .bar-bottom{ 
+       @include horizontal-unhighlighted;
+    }
+    .bar-top{ 
+       @include horizontal-unhighlighted;
+    }
+    .bar-bottom-left{ 
+       @include vertical-unhighlighted;
+    }
+  }
+  &.square-number-5{
+    .bar-top-right{ 
+       @include vertical-unhighlighted;
+    }
+    .bar-bottom-left{ 
+       @include vertical-unhighlighted;
+    }
+  }
+  &.square-number-6{
+    .bar-top-right{ 
+       @include vertical-unhighlighted;
+    }
+  }
+  &.square-number-7{
+    .bar-bottom{ 
+       @include horizontal-unhighlighted;
+    }
+    .bar-middle{ 
+       @include horizontal-unhighlighted;
+    }
+    .bar-top-left{ 
+       @include vertical-unhighlighted;
+    }
+    .bar-bottom-left{ 
+       @include vertical-unhighlighted;
+    }
+  }
+
+  &.square-number-9{
+    .bar-bottom-left{ 
+       @include vertical-unhighlighted;
+    }
+  }
+}
+
+
+.colon-separator{
+  position: relative;
+  background-color: $square-color;
+  width: $bar-width * 4;
+  height: $square-height;
+  float: left;
+
+}
+.dot{
+  position: absolute;
+  background-color: $bar-color;
+  margin-right: $bar-width * 2;
+  margin-left: $bar-width * 2;
+  height: $bar-width; 
+  width: $bar-width;
+  right: 0;
+  left: 0;
+}
+.dot-top{
+  top: $square-height / 2 - ($bar-width * 2);
+ 
+}
+.dot-bottom{
+  bottom: $square-height / 2 - ($bar-width * 2);
+
+}
+
+        
+
+

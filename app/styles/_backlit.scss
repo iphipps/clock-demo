@@ -1,0 +1,40 @@
+.backlit{
+    color: $backlit-color;
+    .bar{
+    	background-color: $backlit-color;
+    	box-shadow: 0 0 $bar-width $backlit-color;
+    	&.bar-top,
+    	&.bar-middle,
+    	&.bar-bottom{
+    		&:before{
+	            border-right-color: $backlit-color;
+	        }
+	        &:after{
+	            border-left-color: $backlit-color;
+	        }
+    	}
+
+ 
+		&.bar-top-left,
+		&.bar-top-right,
+		&.bar-bottom-left,
+		&.bar-bottom-right{
+			&:before{
+	            border-bottom-color: $backlit-color;
+	        }
+	        &:after{
+	            border-top-color: $backlit-color;
+	        }
+		}
+    }
+    .dot{
+    	background-color: $backlit-color;
+    	box-shadow: 0 0 $bar-width $backlit-color;
+    }
+    a{
+    	color: $backlit-color;
+    }
+    
+}
+
+
