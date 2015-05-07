@@ -34,6 +34,11 @@
     a{
     	color: $backlit-color;
     }
+    .btn-primary, .btn-primary, .btn-primary.focus, .btn-primary, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+		color: $btn-primary;
+		background-color: lighten($btn-primary, 70%);
+		border-color: lighten($btn-primary, 60%);
+	}
     
 }
 

@@ -41,3 +41,15 @@ input{
         }
     }
 }
+
+.btn-primary {
+  color: $square-color;
+  background-color: $btn-primary;
+  border-color: $btn-primary-border;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+  color: $btn-primary;
+  background-color: lighten($btn-primary, 70%);
+  border-color: lighten($btn-primary, 60%);
+}
