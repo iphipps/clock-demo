@@ -1,6 +1,36 @@
 'use strict';
 
 /**
+ * @ngdoc overview
+ * @name clockApp
+ * @description
+ * # clockApp
+ *
+ * Main module of the application.
+ */
+angular
+  .module('clockApp', [
+    'ngAnimate',
+    'ngCookies',
+    'ngResource',
+    'ngRoute',
+    'ngSanitize',
+    'ngTouch'
+  ])
+  .config(["$routeProvider", function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  }]);
+
+'use strict';
+
+/**
  * @ngdoc function
  * @name clockApp.controller:MainCtrl
  * @description
@@ -15,7 +45,7 @@
 
 
 angular.module('clockApp')
-  .controller('MainCtrl', function ($scope, $interval) {
+  .controller('MainCtrl', ["$scope", "$interval", function ($scope, $interval) {
   	console.log('mainCtrl run');
   	//$scope initial settings
   	$scope.twentyFour = true;
@@ -156,4 +186,22 @@ angular.module('clockApp')
 
 
 
-  });
+  }]);
+
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name clockApp.controller:AboutCtrl
+ * @description
+ * # AboutCtrl
+ * Controller of the clockApp
+ */
+angular.module('clockApp')
+  .controller('AboutCtrl', ["$scope", function ($scope) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  }]);
